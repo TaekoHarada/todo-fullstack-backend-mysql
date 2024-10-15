@@ -60,3 +60,12 @@ export const loginController = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// logoutController.js
+export const logoutController = (req, res) => {
+  console.log("Logout");
+  // Clear the token cookie
+  res.clearCookie("token");
+
+  return res.status(200).json({ message: "Logged out successfully" });
+};

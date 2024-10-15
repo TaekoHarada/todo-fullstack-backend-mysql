@@ -7,8 +7,21 @@ import cookieParser from "cookie-parser";
 import todoRoutes from "./routes/todoRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
+// import { createServer } from "http"; // Import http server to work with socket.io
+// import { Server } from "socket.io"; // Import Socket.IO server
+
 const app = express();
+// Create HTTP server for Socket.IO
+// const server = createServer(app); // Wrap express app into an HTTP server
 const PORT = process.env.APP_PORT || 5002;
+
+// Initialize Socket.IO
+// const io = new Server(server, {
+//   cors: {
+//     origin: "http://localhost:3000", // Allow frontend origin
+//     credentials: true,
+//   },
+// });
 
 // Middleware
 app.use(express.json());
