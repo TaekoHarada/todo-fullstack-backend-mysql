@@ -30,8 +30,11 @@ export const createTodoController = async (req, res) => {
 // Delete a todo
 export const deleteTodoController = async (req, res) => {
   try {
-    await deleteTodo(req.params.id); // Call the model function
-    res.status(204).send(); // No content to return
+    const affectedRows = await deleteTodo(req.params.id); // Call the model function
+    if (affectedRows === 0) {
+      return res.status(404).json({ message: "Todo not found" }); // Handle not found case
+    }
+    res.status(200).json({ message: "Todo deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

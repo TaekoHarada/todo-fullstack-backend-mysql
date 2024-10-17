@@ -25,7 +25,8 @@ export const createTodo = async (title, completed) => {
 
 export const deleteTodo = async (id) => {
   try {
-    await pool.query("DELETE FROM todos WHERE id = ?", [id]);
+    const [result] = await pool.query("DELETE FROM todos WHERE id = ?", [id]);
+    return result.affectedRows; // Return the number of affected rows
   } catch (error) {
     console.error("Error deleting todo: ", error);
     throw error;
