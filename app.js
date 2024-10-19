@@ -14,6 +14,7 @@ const app = express();
 // Create HTTP server for Socket.IO
 // const server = createServer(app); // Wrap express app into an HTTP server
 // const PORT = process.env.APP_PORT || 5002;
+const PORT = process.env.PORT;
 
 // Initialize Socket.IO
 // const io = new Server(server, {
