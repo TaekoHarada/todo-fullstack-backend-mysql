@@ -50,7 +50,7 @@ export const loginController = async (req, res) => {
     // Set the token as an HTTP-only cookie
     res.cookie("token", token, {
       httpOnly: true,
-      // sameSite: "strict",
+      sameSite: "None",
       maxAge: 3600000, // 1 hour
     });
 
