@@ -34,7 +34,7 @@ app.use("/api/users", userRoutes); // Add user authentication routes
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
+  console.log(`Server running on PORT: ${PORT}`);
 });
 
 // Export app for testing purposes
