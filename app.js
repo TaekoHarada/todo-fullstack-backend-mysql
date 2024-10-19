@@ -13,7 +13,7 @@ import userRoutes from "./routes/userRoutes.js";
 const app = express();
 // Create HTTP server for Socket.IO
 // const server = createServer(app); // Wrap express app into an HTTP server
-const PORT = process.env.APP_PORT || 5002;
+// const PORT = process.env.APP_PORT || 5002;
 
 // Initialize Socket.IO
 // const io = new Server(server, {
@@ -34,7 +34,7 @@ app.use("/api/users", userRoutes); // Add user authentication routes
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on PORT: ${PORT}`);
+  console.log(`Server running on HEROKU DINAMIC PORT: ${PORT}`);
 });
 
 // Export app for testing purposes
