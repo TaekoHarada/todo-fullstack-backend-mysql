@@ -17,5 +17,5 @@ COPY . .
 EXPOSE 5001
 EXPOSE 5002
 
-# Command to run your app.
-CMD ["npm", "start"]
+# Delay the start by 10 seconds, wait for the database to be ready
+CMD sh -c "sleep 10 && npm start"
