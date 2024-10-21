@@ -53,6 +53,7 @@ export const loginController = async (req, res) => {
       sameSite: "None",
       secure: true,
       maxAge: 3600000, // 1 hour
+      domain: "todo-fullstack-frontend-ten.vercel.app",
     });
 
     console.log("User logged in successfully", token);
